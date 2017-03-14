@@ -1,6 +1,8 @@
-require "reuse_xcode_plugins/version"
-
-module ReuseXcodePlugins
-  def self.hello
-    p "Hello World! \n Hello 夜禹！"
-end
+require 'English'
+require 'fileutils'
+require_relative 'cli'
+require 'colorize' unless CLI.no_colors?
+require 'inquirer' unless CLI.non_interactive?
+# require_relative 'version'
+require_relative 'plugins_updater'
+require_relative 'xcode_unsigner'

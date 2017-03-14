@@ -1,0 +1,16 @@
+#!/usr/bin/env ruby
+
+require_relative '../lib/reuse_xcode_plugins'
+
+puts "test"
+
+begin
+  if CLI.unsign_xcode?
+    XcodeUnsigner.unsign_xcode
+  elsif CLI.restore_xcode?
+    XcodeUnsigner.restore_xcode
+  else CLI.update_plugins?
+    PluginsUpdater.update_plugins
+  end
+rescue Interrupt
+end
