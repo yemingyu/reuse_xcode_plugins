@@ -75,7 +75,7 @@ class XcodeUnsigner
       success = false
     end
 
-    success 'Finished! 🎉' if success
+    success '完成! 🎉' if success
   end
 
   def self.update_plugins
