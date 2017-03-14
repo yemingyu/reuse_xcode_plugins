@@ -88,7 +88,7 @@ class XcodeUnsigner
       '然而，未签名的Xcode会产生一定的安全风险，Apple和你的系统都会不信任未签名的Xcode'\
       '请不要使用未签名的Xcode进行打包操作，正常开发没有问题'.colorize(:red),
       "这个工具会产生签名文件的备份，以便于之后你可以用下面这个命令恢复\n",
-      '$ mpaas --restoresign'.colorize(:light_blue)
+      '$ reuse_xcode_plugins --restore'.colorize(:light_blue)
     ]
   end
 end
