@@ -20,7 +20,7 @@ class PluginsUpdater
     plugins = XcodePlugin.find_plugins
 
     if plugins.empty?
-      error "Didn't find any Xcode Plug-in installed on your system."
+      error "未发现任何已安装的Xcode插件"
       return
     else
       title '插件:'
