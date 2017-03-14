@@ -8,10 +8,10 @@ class PluginsUpdater
     xcodes = Xcode.find_xcodes
 
     if xcodes.empty?
-      error "Didn't find any Xcode installed on your system."
+      error "没有发现任何安装的 Xcode"
       return
     else
-      title 'Found:'
+      title '已找到'
       puts xcodes.map { |xcode| "- #{xcode.detailed_description}" }
     end
 
@@ -23,24 +23,24 @@ class PluginsUpdater
       error "Didn't find any Xcode Plug-in installed on your system."
       return
     else
-      title 'Plugins:'
+      title '插件:'
       puts plugins.map { |s| "- #{s}" }
     end
 
     separator
-    process 'Updating...'
+    process '更新UUID...'
 
     uuids = xcodes.collect(&:uuid)
     uuids.each do |uuid|
       plugins.each do |plugin|
         if plugin.add_uuid(uuid) && !CLI.dry_run?
-          success "Added #{uuid} to #{plugin}"
+          success "添加 #{uuid} 到 #{plugin}"
         end
       end
     end
 
     separator
-    success 'Finished! 🎉'
+    success '完成! 🎉'
 
     return if CLI.no_colors?
 

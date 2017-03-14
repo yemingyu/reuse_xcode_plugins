@@ -5,7 +5,7 @@ class XcodePlugin < Bundle
     plugins_path = "#{Dir.home}/Library/Application Support/Developer/Shared/Xcode/Plug-ins/"
 
     unless Dir.exist?(plugins_path)
-      puts "Couldn't find Plug-ins directory."
+      puts "未找到 Plug-ins 目录"
       return []
     end
 
